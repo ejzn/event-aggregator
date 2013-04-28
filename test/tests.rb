@@ -1,5 +1,5 @@
 require 'test/unit'
-require 'events'
+require File.join(File.dirname(__FILE__), '../lib/', 'events')
 
 class TestEvents < Test::Unit::TestCase
     def test_init_eventful
