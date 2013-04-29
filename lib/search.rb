@@ -9,11 +9,16 @@ module Evently
     class Search
 
         def initialize()
-            raise 'Not yet implemented'
+            @eventful = Eventful::API.new 'gRD2ZtJwjqKVNht3'
         end
 
         def get_categories()
-            raise 'Not yet implemented'
+            results = @eventful.call 'categories/list' 
+            categories = []
+            results['category'].each do |item| 
+                categories.push(item['id'])
+            end
+            categories.to_json
         end
     end
 
